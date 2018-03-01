@@ -1,0 +1,24 @@
++get and use nodemon
++use debug mode
+-use debug module
++handle errors (https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website , then search 'locals')
++generate express app structure
+-create templates for texts (EJS)
+-change post request to get request and see about caching def results.
+
++support for accents!
++create functionality for spanish
+-start creating text pages, remember to make multiple pages for book.
++parse word further: get word root to search
++how does it parse 'l'epoque' and 'can't'?
+-search for MYRIEL returns word searched 'undefined'
+-add links to other dictionaries, conjugation
+-add pronunciation
+-add home page for texts.
+
++need a 'loading' graphic.
+-loading graphic and def line need exactly the same height and space needs to be same height when blank.
+
+-add vocab list app
+  -store vocab lists per user
+-integrate 'add word to vocab list' feature to read app.

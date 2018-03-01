@@ -1,0 +1,40 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.section {
+  padding: 8px;
+}
+.word {
+  cursor: pointer
+}
+
+#def-sect {
+  background-color: #f0f8ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#def-loader {
+  display: none;
+}
+
+.loader {
+  border: 3px solid #c6d0d8;
+  border-radius: 50%;
+  border-top: 3px solid #7b7b7b;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

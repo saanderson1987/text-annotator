@@ -1,0 +1,38 @@
+
+<form id='upload-text-form' method="POST" enctype="multipart/form-data">
+  <p>Select a text file to upload</p>
+  <input id='file' type="file" name="textFile" required>
+  <br>
+  <br>
+  Name of text:
+  <input id='name' type='text' name='name' required>
+  <br>
+  <br>
+  <button id='upload-button'>Upload File</button>
+</form>
+
+<p id='message'></p>
+
+<script>
+  const uploadButton = document.getElementById('upload-button');
+  uploadButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    const formData = new FormData();
+    const name = document.getElementById('name').value;
+    const textFile = document.getElementById('file').files[0];
+    formData.append('name', name);
+    formData.append('textFile', textFile);
+    axios.post('/text/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(function(res) {
+      location.href = '/';
+    })
+    .catch(function(error) {
+      $('#message').text('ERROR');
+    });
+  });
+
+</script>

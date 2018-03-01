@@ -1,0 +1,11 @@
+-To start server in debug mode, on command line, use 'DEBUG=express-app:* npm start'
+-To turn nodemon off (to not restart server when changes are made), change 'nodemon' to 'node' in package.json start script.
+
+
+-To start PostgreSQL server, run `pg_ctl -D /usr/local/var/postgres start` in terminal.
+-To start PostgreSQL console, run psql.
+-To connect to database in psql console in terminal to then run queries/commands on it, run
+  $ psql
+    =# \c DATABASE_NAME
+-To run a .sql script from the terminal run `$ psql -f FILENAME`. Be sure to add \c DATABASE_NAME to the top of the script to say which database to modify.
+-To view the table details/schema, run \d TABLE_NAME from the psql console.

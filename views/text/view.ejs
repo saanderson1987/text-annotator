@@ -1,0 +1,6 @@
+<div>YOU ARE VIEWING A TEXT</div>
+<p><a href='/'>Back to homepage</a></p>
+
+<% if (textId) { %>
+  <%- include(`../../texts/${textId}/${textId}`) %>
+<% } %>
