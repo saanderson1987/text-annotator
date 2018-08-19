@@ -4,6 +4,9 @@
 
 -To start PostgreSQL server, run `pg_ctl -D /usr/local/var/postgres start` in terminal.
 -To start PostgreSQL console, run psql.
+-For more information of the pg_ctl command, go to https://www.postgresql.org/docs/10/static/app-pg-ctl.html.
+-To list all databases on the server, run `\list` or `\l`.
+-To list all users/roles, run
 -To connect to database in psql console in terminal to then run queries/commands on it, run
   $ psql
     =# \c DATABASE_NAME

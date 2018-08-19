@@ -15,6 +15,7 @@
 -add links to other dictionaries, conjugation
 -add pronunciation
 -add home page for texts.
+-upload text you paste in, not just files.
 
 +need a 'loading' graphic.
 -loading graphic and def line need exactly the same height and space needs to be same height when blank.

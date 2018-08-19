@@ -1,6 +1,6 @@
 
+<p>Select a text file to upload</p>
 <form id='upload-text-form' method="POST" enctype="multipart/form-data">
-  <p>Select a text file to upload</p>
   <input id='file' type="file" name="textFile" required>
   <br>
   <br>
@@ -12,6 +12,15 @@
 </form>
 
 <p id='message'></p>
+
+<p>OR</p>
+
+<p>Enter or paste text here</p>
+<form>
+  <textarea id='upload-text-area'></textarea>
+  <br>
+  <button id='upload-text-button'>Upload Text</button>
+</form>
 
 <script>
   const uploadButton = document.getElementById('upload-button');
@@ -33,6 +42,13 @@
     .catch(function(error) {
       $('#message').text('ERROR');
     });
+  });
+
+  const uploadTextButton = document.getElementById('upload-text-button');
+  const uploadTextArea = document.getElementById('upload-text-area');
+  uploadTextButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log(uploadTextArea, uploadTextArea.value);
   });
 
 </script>

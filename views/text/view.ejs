@@ -1,6 +1,24 @@
 <div>YOU ARE VIEWING A TEXT</div>
 <p><a href='/'>Back to homepage</a></p>
+<p>Dictionary:</p>
+<div>
+  <span>From:</span>
+  <select class="dictionary" id="from">
+    <option value="eng">English</option>
+    <option selected value="fra">French</option>
+  </select>
+</div>
+<div>
+  <span>To:</span>
+  <select class="dictionary" id="to">
+    <option selected value="eng">English</option>
+    <option value="fra">French</option>
+  </select>
+</div>
+
 
 <% if (textId) { %>
   <%- include(`../../texts/${textId}/${textId}`) %>
 <% } %>
+
+<script src="/javascripts/text-view.js"></script>

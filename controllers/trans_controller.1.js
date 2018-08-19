@@ -20,31 +20,24 @@ function fetchTrans(word, dict) {
   console.log('fetchTrans url:', url);
   return axios.get(url)
     .then( (res) => {
-      console.log(parseData(res.data, dict));
-      return parseData(res.data, dict);
+      console.log(parseData(res.data));
+      return parseData(res.data);
     })
     .catch( (error) => {
       console.log(error);
     });
 }
 
-function parseData(data, dict) {
+function parseData(data) {
+  // data = JSON.parse(data);
   const word = data.phrase;
   const notFound = [word, 'DEFINITION NOT FOUND']
   if (!data.tuc) return notFound;
-  let entries;
-
-  if (dict.from === dict.to) {
-    entries = data.tuc[0].meanings.slice(0, 2)
-    entries = entries.map((meaning) => meaning.text);
-  } else {
-    entries = data.tuc.slice(0, 2);
-    entries = entries.map( entry => {
-      if (entry.phrase) return entry.phrase.text;
-    })
-    if (entries[0] === undefined && entries[1] === undefined) return notFound;
-  }
-
+  let entries = data.tuc.slice(0, 2);
+  entries = entries.map( entry => {
+    if (entry.phrase) return entry.phrase.text;
+  })
+  if (entries[0] === undefined && entries[1] === undefined) return notFound;
   let entryText = entries.join('; ');
   return [word, entryText];
 }

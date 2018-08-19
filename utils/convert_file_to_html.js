@@ -72,7 +72,7 @@ function convertFileToHTML(inputPath, outputPath, lang) {
   <div id='def-line'><span id='word'></span><span id='def'></span></div>
   </div>
   `;
-  html += '\n' + '</div>\n' + defSect + '<script src="/javascripts/main.js"></script>';
+  html += '\n' + '</div>\n' + defSect;
 
   fs.writeFileSync(outputPath, html);
 

@@ -7,6 +7,13 @@ const dict = {
   to: 'eng'
 }
 
+$('.dictionary').change(function(event) {
+  const language = event.target.value;
+  const dictionaryType = event.target.id;
+  dict[dictionaryType] = language;
+  console.log(dict);
+});
+
 text.addEventListener('click', function () {
   if (event.target.classList.contains('word')) {
     let word = event.target.innerHTML;
@@ -20,7 +27,8 @@ text.addEventListener('click', function () {
       $('#def-loader').toggle();
       $('#def-line').toggle();
       wordEl.textContent = `${entryWord}: `;
-      def.textContent = `${defText}`;
+      // def.textContent = `${defText}`;
+      $('#def').html($.parseHTML(defText));
     });
   }
 });
@@ -32,11 +40,3 @@ function getDefinition(word, dict) {
     data: {word: word, from: dict.from, to: dict.to},
   });
 }
-
-// function getDefinition(word) {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/fr-en',
-//     data: {word: word},
-//   });
-// }
