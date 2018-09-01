@@ -27,8 +27,6 @@ var users = require('./routes/users');
 var trans = require('./routes/trans');
 var text = require('./routes/text');
 
-console.log(process.env.DATABASE_URL);
-
 app.use('/', index);
 app.use('/users', users);
 app.use('/trans', trans);
