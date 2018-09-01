@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "savvy-music-213820",
+  "private_key_id": "fa60e2a1c0bbaa9d022545eda5558e513b6719cf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDIohy7Axq8PvSE\nVRR3hw/bW0dLG0MDLEKkifykIPNVkOv5eXw2rIzrf3ywBDXmIp8gqgDQ6t+/oxpE\nRkgKdjUlidO4IvYbYOlAVPndRObyDyXSrV1wohmTaSJa7/jqx8gLv1FS+YXizllx\ngLpttfZg7K1eIb/thpMtW3WdCokIPXME7Vvw/KESpCXJ2RoUumsr+6Uqmnuq7iHt\nMHBsSBgSlY9+8Alevju2QB0SOjuyd9raGdIfb1OsOU+YbTwRwcWKJRmhAXLz1voV\nAXujS01YpjOJ5z2gJneJi4kcXaJRawoScFZM7Ktpj7AJWqmjqON1NeYPtTfAgKwW\n57fkxGzdAgMBAAECggEACriO7HdYAGMk0cVyGIkBEemov5yvUgYVcZFmDKcuGY5q\n7aPOPWWvCg5/7S/saWXENwyeiotidW0TxD41L0ntwRnCVH6ZxBDDpgpkZ6x84sZo\ncP+OlKw0zam6ij10gac3S1ln0RVAUERShzwnuiEVD0zWXsdS6DBewPe4KzIa7HOz\n66dUrwXe+YntMCezot03waDpSoGuzHu6pnpvoJKaYNT+du8feQnVlEzVKSB5ninB\nE3/h+xmr0q/jURGsOWFaHfQN6G7sXZICR7ltsGNlJzKx+2nH+tYYBh+A/Tf1LlO3\ntjRwfgoyKros0xnRGBQxaebOTCvyxlqLkcPfb4JrSQKBgQDqcOIH5n+RyTUZeUpT\nAiAYB10tFkF8MSaFikaC8SgjGGkFKI6AqcZbSQERTiA+A+eZYuPR6w/nWJySMcAi\nkqBQD6yvuZFa3sI34dVRnUQQMMoCWfhp8B23v/ILkWH4HlSziIV6ZCjaQ8kMqp/A\n5ycEUjrhdCIKBNBC7vZbUCn4bwKBgQDbFVd5ls1TKvU1ZDrfcnLzdwc6kigSLWxx\nriDkV7ohdsi8WAT1UsVkSpD1Zmmd33DgvACHXqaOXZM8huoeGRzRMqwt7O7K/2px\nqXirt+CHYg9G0TYSXPxnwggVilQ78TsILhdmU+F7HPqSnBaQSqr91QnqgyQkWqkb\nNSRMZa7dcwKBgQDLEZJH45k2b0GGWjBN7HZeOeq0hiWc7HoAjAB9pWPt2lQFetbM\njcJaCcdZ9QEqlnlCvIy3pNN2waOFYoCZscYY8yrSX3uPaYpzmzMKaZ2uJISmOsZZ\nBPrI0gNXj8t7ftJBXIy5sg5M2RBJ33VXQyHhtVR5Ov3NDdRTVeegurRQEwKBgC9Q\nuqWt5gZSPscbMIPVqfHfARarPjA+0y7yFnR6Zd6YUt4qfFenWq5AVHJLff/0o+JF\neC/ER2Bz4TqvQJzje4/Ky9jXVPNOmmSV31Pm0H0stnPq9yycHH8kLq7IQ0z22nL3\n0WHuN8JpDczgHRdoqOlNO2kEjae0VNVlcsN1KoD1AoGBAJbCL6C4i/iP1RV6ireS\nByl3AgXgYviCe5PaaPzzP0kMyxHv1KMDlVrcikceIJBRehkiUbW3bS0/bcYfxipk\nFVLNbnSfdqLTpk9EsGuh/fk3RBsa6gu7QdG63htCFk945cLThTPlB9E3TdJymBw0\niAAKMJ6OKUK+CQPRPSDwd6xo\n-----END PRIVATE KEY-----\n",
+  "client_email": "text-annotator-storage@savvy-music-213820.iam.gserviceaccount.com",
+  "client_id": "117130915040358407520",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/text-annotator-storage%40savvy-music-213820.iam.gserviceaccount.com"
+}

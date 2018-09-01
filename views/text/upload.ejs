@@ -1,4 +1,3 @@
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 
 <p>Select a text file to upload</p>
 <form id='upload-text-form' method="POST" enctype="multipart/form-data">
@@ -22,48 +21,6 @@
   <br>
   <button id='upload-text-button'>Upload Text</button>
 </form>
-
-<div id="app"></div>
-
-
-<script>
-  const albumBucketName = 'text-annotator';
-  const bucketRegion = 'us-east-2';
-  const IdentityPoolId = 'us-east-2:62b6e61b-d49c-4d55-8b34-e69bd4911aa9';
-
-  const myCredentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: IdentityPoolId});
-  const myConfig = new AWS.Config({
-    credentials: myCredentials, region: bucketRegion
-  });
-
-//   AWS.config.update({
-//   region: bucketRegion,
-//   credentials: new AWS.CognitoIdentityCredentials({
-//     IdentityPoolId: IdentityPoolId
-//   })
-// });
-
-  const s3 = new AWS.S3({
-    apiVersion: '2006-03-01',
-    params: {Bucket: albumBucketName}
-  });
-
-  function getHtml(template) {
-          return template.join('\n');
-       }
-  
-  listAlbums();
-
-  function listAlbums() {
-  s3.getBucketCors({}, function(err, data) {
-    if (err) {
-      return alert('There was an error listing your albums: ' + err.message);
-    } else {
-      console.log(data);
-    }
-  });
-}
-</script>
 
 <script>
   const uploadButton = document.getElementById('upload-button');

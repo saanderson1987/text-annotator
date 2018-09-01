@@ -19,51 +19,7 @@ exports.index = function(req, res) {
 }
 
 exports.upload_view = function(req, res) {
-  // res.render('base', {view: 'text/upload'});
-
-  'use strict';
-  const bucketName = 'text-annotator';
-
-  function listFiles(bucketName) {
-    // [START storage_list_files]
-    // Imports the Google Cloud client library
-    const Storage = require('@google-cloud/storage');
-    console.log(Storage);
-// Your Google Cloud Platform project ID
-const projectId = 'savvy-music-213820';
-
-// Creates a client
-const storage = new Storage({
-  projectId: projectId,
-});
-
-// The name for the new bucket
-    /**
-     * TODO(developer): Uncomment the following line before running the sample.
-     */
-    // const bucketName = 'Name of a bucket, e.g. my-bucket';
-  
-    // Lists files in the bucket
-    storage
-      .bucket(bucketName)
-      .getFiles()
-      .then(results => {
-        const files = results[0];
-  
-        console.log('Files:');
-        files.forEach(file => {
-          console.log(file.name);
-        });
-      })
-      .catch(err => {
-        console.error('ERROR:', err);
-      });
-    // [END storage_list_files]
-  }
-
-  listFiles(bucketName);
-
-  res.render('base', {view: 'text/test'});
+  res.render('base', {view: 'text/upload'});
 
 }
 

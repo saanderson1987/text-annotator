@@ -10,7 +10,6 @@ const axios = require('axios');
 
 var app = express();
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -22,7 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -48,8 +46,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  console.log(err);
-  res.render('error');
+  // console.log(err);
+  // res.render('error');
 });
 
 module.exports = app;
