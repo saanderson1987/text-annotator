@@ -1,17 +1,14 @@
-
+<p id='message' ></p>
+Name of text:
+<input id='name' type='text' name='name'>
+<br>
 <p>Select a text file to upload</p>
 <form id='upload-text-form' method="POST" enctype="multipart/form-data">
-  <input id='file' type="file" name="textFile" required>
-  <br>
-  <br>
-  Name of text:
-  <input id='name' type='text' name='name' required>
+  <input id='file' type="file" name="textFile">
   <br>
   <br>
   <button id='upload-button'>Upload File</button>
 </form>
-
-<p id='message'></p>
 
 <p>OR</p>
 
@@ -24,31 +21,51 @@
 
 <script>
   const uploadButton = document.getElementById('upload-button');
+  const message = document.getElementById('message');
+  const name = document.getElementById('name').value;
+
   uploadButton.addEventListener('click', function (event) {
     event.preventDefault();
     const formData = new FormData();
-    const name = document.getElementById('name').value;
     const textFile = document.getElementById('file').files[0];
-    formData.append('name', name);
-    formData.append('textFile', textFile);
-    axios.post('/text/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then(function(res) {
-      location.href = '/';
-    })
-    .catch(function(error) {
-      $('#message').text('ERROR');
-    });
+    if (isUploadValid(name, textFile, 'file')) {
+      formData.append('name', name);
+      formData.append('textFile', textFile);
+      axios.post('/text/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      .then(function(res) {
+        location.href = '/';
+      })
+      .catch(function(error) {
+        // $('#message').text('ERROR');
+        message.textContent = 'ERROR';
+      });
+    }
   });
 
   const uploadTextButton = document.getElementById('upload-text-button');
   const uploadTextArea = document.getElementById('upload-text-area');
   uploadTextButton.addEventListener('click', function (event) {
     event.preventDefault();
-    console.log(uploadTextArea, uploadTextArea.value);
+    const text = uploadTextArea.value; 
+    if (isUploadValid(name, text, 'text')) {
+      
+    }
   });
+
+  function isUploadValid(name, text, type) {
+    if (!name) {
+      message.textContent = 'Please specify a name.';
+    }
+    if (!text) {
+      const noText = type === 'file' ? 
+          'Please select a file to upload.'
+        : 'Please enter some text.'
+      message.textContent = noText;
+    }
+  }
 
 </script>
