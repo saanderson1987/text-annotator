@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-module.exports = convertFileToHTML;
+module.exports = convertTextToHTML;
 
-function convertFileToHTML(inputPath, outputPath, lang) {
-  const text = fs.readFileSync(inputPath, 'utf-8');
+function convertTextToHTML(text, outputPath, lang) {
+  // const text = fs.readFileSync(inputPath, 'utf-8');
   const lines = text.split('\n\n');
 
   let html = `<div id='text' class='section'>`;

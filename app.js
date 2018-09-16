@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// module that makes HTTP requests easy.
-const axios = require('axios');
-
 var app = express();
 
 // view engine setup
@@ -23,12 +20,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var trans = require('./routes/trans');
 var text = require('./routes/text');
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/trans', trans);
 app.use('/text', text)
 // catch 404 and forward to error handler

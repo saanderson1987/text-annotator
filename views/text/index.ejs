@@ -1,7 +1,23 @@
 <h2>List of Texts</h2>
 <a href='/text/upload'>Upload a text</a>
-<ul>
+<ul id='text-list'>
   <% texts.forEach(function(text){ %>
-  <li><a href='/text/<%= text.id %>'><%= text.name %></a></li>
+  <li>
+    <a href='/text/<%= text.id %>'><%= text.name %></a>
+    <button class='delete-button' data-text-id=<%= text.id %>>Delete</button>
+  </li>
   <% }) %>
 </ul>
+
+<script>
+  const textsListEl = document.getElementById('text-list');
+  textsListEl.addEventListener('click', function(e) {
+    if (e.target.className === 'delete-button') {
+      const textId = e.target.dataset.textId;
+      axios.delete(`/text/${textId}`)
+        .then(function(res) {
+          location.reload();
+        });
+    }
+  });
+</script>
