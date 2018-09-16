@@ -4,7 +4,10 @@
   <% texts.forEach(function(text){ %>
   <li>
     <a href='/text/<%= text.id %>'><%= text.name %></a>
-    <button class='delete-button' data-text-id=<%= text.id %>>Delete</button>
+    <!-- don't allow deletion of the LesMis text -->
+    <% if (text.id !== 24) { %> 
+      <button class='delete-button' data-text-id=<%= text.id %>>Delete</button>
+    <% } %>
   </li>
   <% }) %>
 </ul>
