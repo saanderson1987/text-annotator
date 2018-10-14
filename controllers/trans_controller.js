@@ -1,4 +1,5 @@
 const axios = require('axios');
+const get = require('lodash.get');
 
 exports.getTrans = function (req, res) {
   const dict = {from: req.body.from, to: req.body.to};
@@ -30,6 +31,7 @@ function fetchTrans(word, dict) {
 
 function parseData(data, dict) {
   const word = data.phrase;
+  // console.log(data)
   const notFound = [word, 'DEFINITION NOT FOUND']
   if (!data.tuc) return notFound;
   let entries;
@@ -50,11 +52,15 @@ function parseData(data, dict) {
 }
 
 function parseRequestWord(word, lang) {
-  word = word.toLowerCase();
-  word = encodeURIComponent(word); // convert accents to % encoding for URI.
-  return lemmatizeWord(word, lang)
+  let parsedWord = word.toLowerCase();
+  parsedWord = encodeURIComponent(parsedWord); // convert accents to % encoding for URI.
+  return lemmatizeWord(parsedWord, lang)
   .then((lemma) => {
-    return lemma;
+    if (lemma) {
+      return lemma;
+    } else {
+      return word;
+    }
   });
 }
 
@@ -68,7 +74,7 @@ function lemmatizeWord(word, lang) {
   const url = `https://api.meaningcloud.com/parser-2.0?key=7064e8088431023a42fd7ef5c7d3db41&lang=${lang}&txt=${word}`
   return axios.get(url)
   .then( (res) => {
-    let lemma = res.data.token_list[0].token_list[0].token_list[0].analysis_list[0].lemma;
+    let lemma = get(res.data, 'token_list[0].token_list[0].token_list[0].analysis_list[0].lemma', '')
     lemma = encodeURIComponent(lemma)
     return lemma;
   })
